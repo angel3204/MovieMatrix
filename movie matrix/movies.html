@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies - Movie Matrix</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="alternate icon" type="image/jpeg" href="assets/favicon.jpg">
+    <link rel="apple-touch-icon" href="assets/favicon.jpg">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="js/intro.js"></script>
+    <script src="js/language.js"></script>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body data-page="movies">
+
+    <div id="initial-loader" class="initial-loader">
+        <div class="loader-content">
+            <h1 class="loader-logo">MOVIE MATRIX</h1>
+            <p class="loader-sub" data-i18n="initializingExperience">INITIALIZING EXPERIENCE...</p>
+            <div class="loader-progress-ring">
+                <div class="loader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cinematic-landing" class="cinematic-landing" role="region" aria-label="Welcome to Movie Matrix">
+        <div class="cinematic-poster-wall" id="cinematic-poster-wall"></div>
+
+        <div class="cinematic-overlay-dark"></div>
+        <div class="cinematic-overlay-radial"></div>
+        <div class="cinematic-overlay-vignette"></div>
+        <div class="cinematic-grain"></div>
+
+        <header class="cinematic-header">
+            <div class="cinematic-brand">
+                <h1 class="cinematic-logo-title">MOVIE MATRIX</h1>
+                <span class="cinematic-brand-badge">CINEMATIC</span>
+            </div>
+            <div class="cinematic-top-right">
+
+                <div class="lang-select-wrapper" id="landing-lang-select-wrapper" title="Select Language">
+                    <span class="lang-globe-icon">🌐</span>
+                    <select class="lang-select" id="landing-lang-select" aria-label="Select Language">
+                        <option value="en" selected>English</option>
+                        <option value="hi">हिन्दी</option>
+                    </select>
+                    <span class="dropdown-arrow">▾</span>
+                </div>
+                <button class="cinematic-signin-btn" id="cinematic-signin-btn" type="button" data-i18n="signIn">
+                    Sign In
+                </button>
+            </div>
+        </header>
+
+        <div class="cinematic-center-content">
+            <div class="cinematic-hero-tagline" id="cinematic-tagline">
+                <span class="cinematic-tagline-dot"></span>
+                <span id="cinematic-tagline-text" data-i18n="discoverTagline">ORIGINAL SIMULATIONS &amp; STORIES</span>
+            </div>
+            <h2 class="cinematic-headline" id="cinematic-headline">
+                <span data-i18n="discoverHeadline1">DISCOVER YOUR</span><br>
+                <span class="cinematic-headline-gradient" id="cinematic-headline-accent" data-i18n="discoverHeadline2">NEXT FAVORITE STORY</span>
+            </h2>
+            <p class="cinematic-description" id="cinematic-description" data-i18n="discoverDesc">
+                Explore movies, discover hidden gems, and build your perfect watchlist.
+            </p>
+            <div class="cinematic-cta-group">
+                <button class="cinematic-cta-btn primary" id="enter-matrix-btn" type="button">
+                    <span id="cinematic-cta-text" data-i18n="enterMovieMatrix">ENTER MOVIE MATRIX</span>
+                    <span class="cinematic-cta-icon">→</span>
+                </button>
+                <button class="cinematic-cta-btn secondary" id="cinematic-trailers-btn" type="button">
+                    <span id="cinematic-trailers-text" data-i18n="exploreTrailers">EXPLORE TRAILERS</span>
+                </button>
+            </div>
+        </div>
+
+        <footer class="cinematic-footer">
+            <div class="cinematic-quality-pills">
+                <span class="cinematic-pill" data-i18n="qualityBadge">4K ULTRA HD</span>
+                <span class="cinematic-pill">DOLBY ATMOS</span>
+                <span class="cinematic-pill">SPATIAL SOUND</span>
+            </div>
+        </footer>
+
+        <section class="cinematic-team-footer" aria-label="Meet The Team">
+            <div class="cinematic-divider">
+                <span class="cinematic-divider-line"></span>
+                <span class="cinematic-divider-symbol">✦</span>
+                <span class="cinematic-divider-line"></span>
+            </div>
+
+            <h2 class="cinematic-team-title" data-i18n="meetTheTeam">MEET THE TEAM</h2>
+
+            <div class="cinematic-team-grid">
+
+                <div class="team-card">
+                    <div class="team-card-inner">
+                        <h3 class="team-member-name">ANGEL ARORA</h3>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card-inner">
+                        <h3 class="team-member-name">PARAS WALIA</h3>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card-inner">
+                        <h3 class="team-member-name">GARIMA BHEL</h3>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card-inner">
+                        <h3 class="team-member-name">UDAYVIR SINGH</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cinematic-team-branding">
+                <div class="team-brand-logo">MOVIE MATRIX</div>
+                <p class="team-brand-tagline" data-i18n="footerBrandTagline">A Movie &amp; TV Discovery Experience</p>
+            </div>
+
+            <div class="cinematic-team-bottom">
+                <span class="team-copyright" data-i18n="footerCopyright">© 2026 Movie Matrix</span>
+            </div>
+        </section>
+    </div>
+
+    <nav id="navbar">
+        <div class="nav-left">
+            <h1 class="logo" id="logo-btn">MOVIE MATRIX</h1>
+            <button class="back-to-front-btn" id="back-to-front-btn" onclick="openFrontPage()" title="Back to Front Page">
+                <span data-i18n="backToFrontPage">← Back to Front Page</span>
+            </button>
+            <ul class="nav-links">
+                <li class="nav-item" data-tab="home" data-i18n="navHome">Home</li>
+                <li class="nav-item" data-tab="tv" data-i18n="navTvShows">TV Shows</li>
+                <li class="nav-item active" data-tab="movies" data-i18n="navMovies">Movies</li>
+                <li class="nav-item" data-tab="new-popular" data-i18n="navNewPopular">New & Popular</li>
+                <li class="nav-item" data-tab="mylist">
+                    <span data-i18n="navMyList">My List</span> <span class="badge" id="mylist-count">0</span>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="search-box" id="search-box">
+                <button class="search-btn" id="search-toggle-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <input type="text" id="search-input" data-i18n-placeholder="searchPlaceholderMovies" placeholder="Search movies..." autocomplete="off">
+                <button class="clear-search-btn hidden" id="clear-search-btn" aria-label="Clear search">&times;</button>
+                <div class="search-suggestions-dropdown hidden" id="search-suggestions-dropdown"></div>
+            </div>
+
+            <div class="theme-dropdown-wrapper" id="theme-dropdown-wrapper">
+                <button class="theme-picker-btn" id="theme-picker-btn" aria-label="Choose Theme" title="Choose Color Theme">
+                    <span class="theme-color-dot" id="theme-current-dot"></span>
+                    <span class="theme-btn-label" data-i18n="themeLabel">Theme</span>
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+                <div class="theme-dropdown-menu hidden" id="theme-dropdown-menu">
+                    <div class="theme-option active" data-theme="midnight-matrix">
+                        <span class="theme-dot dot-midnight"></span>
+                        <span data-i18n="midnightMatrix">🌑 Midnight Matrix</span>
+                    </div>
+                    <div class="theme-option" data-theme="cyber-neon">
+                        <span class="theme-dot dot-neon"></span>
+                        <span data-i18n="cyberNeon">💜 Cyber Neon</span>
+                    </div>
+                    <div class="theme-option" data-theme="ocean-noir">
+                        <span class="theme-dot dot-ocean"></span>
+                        <span data-i18n="oceanNoir">🌊 Ocean Noir</span>
+                    </div>
+                    <div class="theme-option" data-theme="sunset-cinema">
+                        <span class="theme-dot dot-sunset"></span>
+                        <span data-i18n="sunsetCinema">🌅 Sunset Cinema</span>
+                    </div>
+                    <div class="theme-shortcut-hint">
+                        <span>Shortcut: Press <strong>'T'</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="auth-btn" id="nav-signin-btn" data-i18n="signIn">Sign In</button>
+
+            <div class="user-menu-wrapper hidden" id="user-menu-wrapper">
+                <button class="user-avatar-btn" id="user-avatar-btn">
+                    <span class="avatar-initials" id="user-initials">U</span>
+                    <span class="user-name-label" id="user-name-label">User</span>
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+                <div class="user-dropdown-menu hidden" id="user-dropdown-menu">
+                    <div class="user-dropdown-header">
+                        <strong id="user-full-name">User Name</strong>
+                        <span id="user-email-text" class="user-email-text">user@example.com</span>
+                    </div>
+                    <div class="user-dropdown-divider"></div>
+                    <div class="user-dropdown-item" onclick="switchTab('mylist')">🎬 <span data-i18n="navMyList">My List</span></div>
+                    <div class="user-dropdown-item signout-item" id="nav-signout-btn">🚪 <span data-i18n="signOut">Sign Out</span></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="hero-banner">
+        <div class="hero-bg-wrapper">
+            <div class="hero-bg-layer layer-a active" id="hero-bg-a"></div>
+            <div class="hero-bg-layer layer-b" id="hero-bg-b"></div>
+        </div>
+
+        <canvas id="hero-particles-canvas" class="hero-canvas"></canvas>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content" id="hero-content">
+            <div class="hero-badge" id="hero-badge">⚡ BLOCKBUSTER CINEMA</div>
+            <h2 class="hero-title" id="hero-title">Cyber Heist</h2>
+            <div class="hero-meta" id="hero-meta">
+                <span class="match-score">95% Match</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-year">2024</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-rating">18+</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-duration">1h 58m</span>
+                <span class="meta-type-badge">MOVIE</span>
+            </div>
+            <div class="hero-genres" id="hero-genres">Action • Sci-Fi • Heist</div>
+            <p class="hero-description" id="hero-description">
+                An elite squad of black-hat hackers plan the ultimate heist: breaking into a subterranean quantum bank guarded by autonomous AI firewalls.
+            </p>
+            <div class="hero-buttons">
+                <button class="play-btn" id="hero-play-btn">▶ Watch Trailer</button>
+                <button class="info-btn" id="hero-info-btn">ⓘ <span data-i18n="moreInfo">More Info</span></button>
+                <button class="mylist-btn" id="hero-mylist-btn">＋ Add to My List</button>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator" id="hero-scroll-indicator" onclick="document.getElementById('main-content').scrollIntoView({behavior: 'smooth'})">
+            <span class="scroll-text">EXPLORE MOVIES</span>
+            <div class="scroll-arrow-icon"></div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="search-results-section" class="hidden">
+            <div class="search-results-header">
+                <h2 class="section-heading" id="search-results-title">Search Results</h2>
+                <div class="search-filters-bar" id="search-filters-bar">
+                    <div class="filter-group">
+                        <label for="filter-type">Type:</label>
+                        <select id="filter-type" class="filter-select">
+                            <option value="all">All Types</option>
+                            <option value="movie">Movies</option>
+                            <option value="tv">TV Shows</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-genre">Genre:</label>
+                        <select id="filter-genre" class="filter-select">
+                            <option value="all">All Genres</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sort-by">Sort By:</label>
+                        <select id="sort-by" class="filter-select">
+                            <option value="match">Popularity (Match %)</option>
+                            <option value="newest">Release Year (Newest)</option>
+                            <option value="title">Title (A - Z)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="search-grid" id="search-grid"></div>
+        </section>
+
+        <div id="content-rows-container"></div>
+
+        <section id="mylist-empty-section" class="hidden">
+            <div class="empty-state-container">
+                <div class="cinematic-empty-state">
+                    <div class="empty-glow"></div>
+                    <div class="empty-icon-ring">🎬</div>
+                    <h2 data-i18n="myListSubhead">YOUR WATCHLIST IS WAITING...</h2>
+                    <p data-i18n="myListEmptyDesc">Save movies and TV shows you want to watch later.</p>
+                    <button class="primary-btn explore-btn" onclick="switchTab('movies')" aria-label="Explore Movies">
+                        <span>🎬</span> <span data-i18n="exploreMovies">EXPLORE MOVIES</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="react-section">
+            <div id="react-app-root"></div>
+        </section>
+
+        <section class="cinematic-team-footer" aria-label="Meet The Team">
+            <div class="cinematic-divider">
+                <span class="cinematic-divider-line"></span>
+                <span class="cinematic-divider-symbol">✦</span>
+                <span class="cinematic-divider-line"></span>
+            </div>
+
+            <h2 class="cinematic-team-title" data-i18n="meetTheTeam">MEET THE TEAM</h2>
+
+            <div class="cinematic-team-grid">
+
+                <div class="team-card">
+                    <div class="team-card-inner">
+                        <h3 class="team-member-name">ANGEL ARORA</h3>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card-inner">
+                        <h3 class="team-member-name">PARAS WALIA</h3>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card-inner">
+                        <h3 class="team-member-name">GARIMA BHEL</h3>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card-inner">
+                        <h3 class="team-member-name">UDAYVIR SINGH</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cinematic-team-branding">
+                <div class="team-brand-logo">MOVIE MATRIX</div>
+                <p class="team-brand-tagline" data-i18n="footerBrandTagline">A Movie &amp; TV Discovery Experience</p>
+            </div>
+
+            <div class="cinematic-team-bottom">
+                <span class="team-copyright" data-i18n="footerCopyright">© 2026 Movie Matrix</span>
+            </div>
+        </section>
+    </main>
+
+    <div id="details-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="details-modal-title">
+        <div class="modal-backdrop" onclick="closeDetailsModal()"></div>
+        <div class="modal-content details-modal-content">
+            <button class="close-btn" onclick="closeDetailsModal()" aria-label="Close movie details">&times;</button>
+
+            <div class="details-layout-container">
+                <div class="details-poster-col">
+                    <img id="details-poster-img" src="assets/matrix_awakens.jpg" alt="Movie Poster" class="details-poster-img">
+                </div>
+
+                <div class="details-info-col">
+                    <div class="details-header-row">
+                        <h2 id="details-modal-title" class="details-title">Movie Title</h2>
+                        <span id="details-type-badge" class="meta-type-badge">MOVIE</span>
+                    </div>
+
+                    <div class="details-meta-row">
+                        <span id="details-default-rating" class="modal-default-rating-tag">⭐ 8.8/10</span>
+                        <span id="details-match" class="match-score">98% Match</span>
+                        <span id="details-year" class="meta-year">2024</span>
+                        <span id="details-rating" class="meta-rating">16+</span>
+                        <span id="details-duration" class="meta-duration">2h 16m</span>
+                    </div>
+
+                    <div class="details-extra-grid">
+                        <div><strong>Genre:</strong> <span id="details-genre">Sci-Fi, Action</span></div>
+                        <div><strong>Cast:</strong> <span id="details-cast">Keanu Reeves, Carrie-Anne Moss</span></div>
+                    </div>
+
+                    <p id="details-description" class="details-description">Detailed synopsis of the movie or show.</p>
+
+                    <div id="details-user-rating-box" class="modal-user-rating-box"></div>
+
+                    <div class="details-actions-row">
+                        <button class="primary-btn watch-trailer-btn" id="details-watch-trailer-btn" type="button">
+                            <span>▶</span> <span data-i18n="watchTrailer">Watch Trailer</span>
+                        </button>
+                        <button class="mylist-btn" id="details-mylist-btn" type="button">
+                            <span>＋</span> <span data-i18n="addToMyList">Add to My List</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="video-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="trailer-modal-title">
+        <div class="modal-backdrop" onclick="closePlayer()"></div>
+        <div class="modal-content video-modal-content">
+            <button class="close-btn" onclick="closePlayer()" aria-label="Close trailer player">&times;</button>
+            <div class="video-container">
+                <iframe id="youtube-player" src="" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Trailer Video Player"></iframe>
+            </div>
+            <div class="video-modal-footer">
+                <h3 id="trailer-modal-title" class="trailer-title">Trailer Player</h3>
+                <button class="secondary-btn close-trailer-btn" onclick="closePlayer()" type="button">Close Trailer</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="auth-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+        <div class="modal-backdrop" onclick="closeAuthModal()"></div>
+        <div class="modal-content auth-modal-content">
+            <button class="close-btn" onclick="closeAuthModal()" aria-label="Close authentication modal">&times;</button>
+            <div class="auth-box">
+                <div class="auth-header">
+                    <h2 class="logo" id="auth-modal-title">MOVIE MATRIX</h2>
+                    <p id="auth-subtitle">Sign in to access your personal watchlist and streaming features.</p>
+                </div>
+                <div class="auth-tabs" role="tablist">
+                    <button class="auth-tab active" id="tab-signin" role="tab" aria-selected="true" onclick="switchAuthTab('signin')">Sign In</button>
+                    <button class="auth-tab" id="tab-signup" role="tab" aria-selected="false" onclick="switchAuthTab('signup')">Sign Up</button>
+                </div>
+                <form id="signin-form" class="auth-form" novalidate>
+                    <div class="form-group">
+                        <label for="signin-email">Email Address</label>
+                        <input type="email" id="signin-email" placeholder="name@example.com" required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="signin-password">Password</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="signin-password" placeholder="Enter your password" required autocomplete="current-password">
+                            <button type="button" class="toggle-password-btn" onclick="togglePasswordVisibility('signin-password', this)" aria-label="Toggle password visibility" aria-pressed="false">👁️</button>
+                        </div>
+                    </div>
+                    <div id="signin-error" class="auth-error-msg hidden" role="alert"></div>
+                    <button type="submit" class="primary-btn auth-submit-btn">Sign In</button>
+                </form>
+                <form id="signup-form" class="auth-form hidden" novalidate>
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" placeholder="Alex Morgan" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email Address</label>
+                        <input type="email" id="signup-email" placeholder="name@example.com" required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="signup-password" placeholder="Create password" required autocomplete="new-password">
+                            <button type="button" class="toggle-password-btn" onclick="togglePasswordVisibility('signup-password', this)" aria-label="Toggle password visibility" aria-pressed="false">👁️</button>
+                        </div>
+                    </div>
+                    <div class="password-rules-box" id="password-rules-box">
+                        <p class="rules-heading">Password Security Requirements:</p>
+                        <ul class="rules-list">
+                            <li id="rule-length" class="rule-item invalid"><span class="rule-icon">✖</span> At least 8 characters</li>
+                            <li id="rule-uppercase" class="rule-item invalid"><span class="rule-icon">✖</span> At least 1 capital letter (A-Z)</li>
+                            <li id="rule-special" class="rule-item invalid"><span class="rule-icon">✖</span> At least 1 special character (!@#$%^&*)</li>
+                        </ul>
+                    </div>
+                    <div id="signup-error" class="auth-error-msg hidden" role="alert"></div>
+                    <button type="submit" class="primary-btn auth-submit-btn">Create Account</button>
+                </form>
+
+                <div class="guest-divider"><span data-i18n="orDivider">──────── OR ────────</span></div>
+
+                <button type="button" class="google-auth-btn" id="btn-google-login" onclick="handleGoogleSignIn()">
+                    <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                    <span data-i18n="continueWithGoogle">Continue with Google</span>
+                </button>
+
+                <button type="button" class="guest-login-btn" id="btn-guest-login" onclick="handleGuestLogin()">
+                    <span>👤</span> <span data-i18n="continueGuest">Continue as Guest</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+    <div id="theme-ripple" class="theme-ripple"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/app.js"></script>
+
+    <script type="text/babel" src="react/components/MovieCard.jsx"></script>
+    <script type="text/babel" src="react/components/MovieGrid.jsx"></script>
+    <script type="text/babel" src="react/components/SearchBar.jsx"></script>
+    <script type="text/babel" src="react/components/FilterPanel.jsx"></script>
+    <script type="text/babel" src="react/App.jsx"></script>
+    <script type="text/babel" src="react/main.jsx"></script>
+</body>
+</html>
+
